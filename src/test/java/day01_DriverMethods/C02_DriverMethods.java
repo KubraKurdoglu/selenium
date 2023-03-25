@@ -35,5 +35,13 @@ public class C02_DriverMethods {
 
         //HANDLES==> ise windowhandle'den farkli, bunu ilerde gorecegiz, ama sanirim
         //herhangi bir sayfada iken bir baska sayfaya farkli sekilde gecmek icin
+
+
+        //ISTERSEN TUM BU KODLARI CHROME ILE DE CALISTIRABILIRSIN
+        //System.setProperty("chromeDriver","src/resources/driver/msedgedriver.exe" );
+        // //WebDriver driver= new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origin=*"));
+        // BU KODU YORUMDAN KALIDIRIP
+        //EDGE YI YORUMA ALIRSAN OYLE CALISIR
+
     }
 }

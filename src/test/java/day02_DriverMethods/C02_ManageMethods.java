@@ -10,17 +10,22 @@ public class C02_ManageMethods {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("chromeDriver", "src/resources/driver/chromedriver.exe");
         WebDriver driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
         //NOT: Sayfadaki her bir webelement için max 20 saniye bekler
+
         //Youtube web sayfasına gidin ve sayfa başlığının “youtube” olup olmadığını doğrulayın  (verify),
         // eğer değilse doğru başlığı(Actual Title) konsolda yazdirin.
+
         driver.get("https://youtube.com");
         String actulaTitle = driver.getTitle();//Gerçek başlık
         String expectedTitle = "youtube";//Beklenen başlık
         if (actulaTitle.equals(expectedTitle)) {
             System.out.println("TEST PASSED");
         } else System.out.println("TEST FAILED Gerçek Başlık : " + actulaTitle);
+
         //Sayfa URL'sinin “youtube” içerip içermediğini (contains) doğrulayın, içermiyorsa doğru  URL'yi yazdırın.
         String actualUrl = driver.getCurrentUrl();
         String beklenenKelime = "youtube";

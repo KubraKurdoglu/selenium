@@ -16,8 +16,10 @@ public class C03_WebelementLocators {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         //Amazon sayfasına gidiniz
         driver.get("https://amazon.com");
+
         //Search box bölümünü locate ediniz ve amazonda iphone aratınız
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone", Keys.ENTER);
+        
         //submit yapmak yerine sendKeys("iphone", Keys.ENTER); olarak kullanabiliriz.
 
         //WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));

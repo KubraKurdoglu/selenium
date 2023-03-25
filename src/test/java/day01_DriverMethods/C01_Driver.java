@@ -1,12 +1,20 @@
 package day01_DriverMethods;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class C01_Driver {
     public static void main(String[] args) {
 
+
+        ///////////////ONEMLI NOT, CHROME'UN HERKESTE HATA VERMESI NEDENIYLE HOCA HEM EDGE
+        //////HEMDE CHROME KULLANIMINI GOSTERDI. BEN CHROME'U YORUMA ALDIM CUNKU EDGE DUZGUN CALISIYOR
+
         System.setProperty("edgeDriver","src/resources/driver/msedgedriver.exe");
+
+        //System.setProperty("chromeDriver","src/resources/driver/msedgedriver.exe" );
         //chrome, safari, edge istedigin driver'i kullanabilirsin
         //ama resources kisminda, driver bolumune gerekli exe dosyasini eklemen gerkeiyor
 
@@ -23,6 +31,9 @@ public class C01_Driver {
 
 
         WebDriver driver = new EdgeDriver();//Boş bir browser açar
+        //WebDriver driver= new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origin=*"));
+
+
         driver.get("https://techproeducation.com");//get() methodu ile adresini belittiğimiz sayfaya gideriz
         System.out.println("Sayfa Başlığı = "+driver.getTitle()); // içinde bulunduğumuz sayfanın başlığını verir
         System.out.println("Sayfa Url'i = "+driver.getCurrentUrl()); //içinde bulunduğumuz sayfanın url'i verir
